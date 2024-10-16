@@ -1,0 +1,58 @@
+<div class="container mx-auto max-w-lg mt-10">
+  <h2 class="text-2xl font-bold text-center mb-6">Ajouter un nouveau véhicule</h2>
+
+  <form [formGroup]="carForm" (ngSubmit)="onSubmit()" class="space-y-4">
+
+    <div>
+      <label class="block mb-2 font-semibold" for="brand">Marque</label>
+      <input
+        id="brand"
+        type="text"
+        formControlName="brand"
+        class="border border-gray-300 rounded px-4 py-2 w-full"
+        placeholder="Entrez la marque du véhicule"
+      />
+      <div *ngIf="carForm.get('brand')?.invalid && carForm.get('brand')?.touched" class="text-red-500 text-sm">
+        La marque est obligatoire.
+      </div>
+    </div>
+
+    <div>
+      <label class="block mb-2 font-semibold" for="model">Modèle</label>
+      <input
+        id="model"
+        type="text"
+        formControlName="model"
+        class="border border-gray-300 rounded px-4 py-2 w-full"
+        placeholder="Entrez le modèle du véhicule"
+      />
+      <div *ngIf="carForm.get('model')?.invalid && carForm.get('model')?.touched" class="text-red-500 text-sm">
+        Le modèle est obligatoire.
+      </div>
+    </div>
+
+    <div>
+      <label class="block mb-2 font-semibold" for="picture">Lien de l'image</label>
+      <input
+        id="picture"
+        type="text"
+        formControlName="picture"
+        class="border border-gray-300 rounded px-4 py-2 w-full"
+        placeholder="Entrez le lien de l'image du véhicule (jpg, png, gif)"
+      />
+      <div *ngIf="carForm.get('picture')?.invalid && carForm.get('picture')?.touched" class="text-red-500 text-sm">
+        L'image est obligatoire et doit être un lien valide.
+      </div>
+    </div>
+
+    <button 
+      type="submit" 
+      class="bg-green-500 hover:bg-green-700 text-white font-bold py-2 px-4 rounded"
+      [disabled]="carForm.invalid"
+    >
+      Ajouter
+    </button>
+
+  </form>
+</div>
+

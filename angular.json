@@ -3,7 +3,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "EvalAngularBastienTHIEBAUT": {
+    "EvalAng-Bastien-THIEBAUT": {
       "projectType": "application",
       "schematics": {
         "@schematics/angular:component": {
@@ -17,7 +17,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:application",
           "options": {
-            "outputPath": "dist/eval-angular-bastien-thiebaut",
+            "outputPath": "dist/eval-ang-bastien-thiebaut",
             "index": "src/index.html",
             "browser": "src/main.ts",
             "polyfills": [
@@ -64,10 +64,10 @@
           "builder": "@angular-devkit/build-angular:dev-server",
           "configurations": {
             "production": {
-              "buildTarget": "EvalAngularBastienTHIEBAUT:build:production"
+              "buildTarget": "EvalAng-Bastien-THIEBAUT:build:production"
             },
             "development": {
-              "buildTarget": "EvalAngularBastienTHIEBAUT:build:development"
+              "buildTarget": "EvalAng-Bastien-THIEBAUT:build:development"
             }
           },
           "defaultConfiguration": "development"
